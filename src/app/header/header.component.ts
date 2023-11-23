@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  public cartIsOpen: boolean = false;
 
+  openCart(){
+    this.cartIsOpen = true;
+  }
+
+  closeCart(){
+    this.cartIsOpen = false;
+  }
 }
