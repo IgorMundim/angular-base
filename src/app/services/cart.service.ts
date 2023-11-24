@@ -1,12 +1,12 @@
 
-import { ProductsProps } from "../data/products";
+import { IProduct } from "../data/products";
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cartItems: ProductsProps[] = [];
+  private cartItems: IProduct[] = [];
   private cartDetails = {
     total: 0,
     countItems: 0
@@ -20,10 +20,10 @@ export class CartService {
   }
 
 
-  public addCart(productsToAdd: ProductsProps){
+  public addCart(productsToAdd: IProduct){
     const existingCartItems = this.cartItems.find((cartItem) => cartItem.id === productsToAdd.id);
     if (existingCartItems) {
-      this.cartItems.map((cartItem: ProductsProps) =>
+      this.cartItems.map((cartItem: IProduct) =>
         cartItem.id === productsToAdd.id ? cartItem.quantity++ : cartItem
       );
     } else {
@@ -33,16 +33,16 @@ export class CartService {
     this.cartDetails.total += productsToAdd.price;
   }
 
-  public removeCartItems(cartItemToRemove: ProductsProps, index: number){
+  public removeCartItems(cartItemToRemove: IProduct, index: number){
     const existingCartItem = this.cartItems.find((cartItem) => cartItem.id === cartItemToRemove.id);
 
     if (existingCartItem?.quantity === 1)
       this.clearCartItem(index);
-    else 
+    else
       this.cartDetails.total -= cartItemToRemove.price
 
 
-    this.cartItems.map((cartItem: ProductsProps) =>
+    this.cartItems.map((cartItem: IProduct) =>
       cartItem.id === cartItemToRemove.id ? { ...cartItem, quantity: cartItem.quantity-- } : cartItem
     );
 

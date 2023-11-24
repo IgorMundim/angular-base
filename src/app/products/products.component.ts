@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { ProductsProps } from '../data/products';
+import { IProduct } from '../data/products';
 
 @Component({
   selector: 'app-products',
@@ -8,9 +8,9 @@ import { ProductsProps } from '../data/products';
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent  implements OnInit{
-  public products: Array<ProductsProps> = [];
+  public products: Array<IProduct> = [];
   constructor(private productService: ProductService){}
-  
+
   ngOnInit(): void {
     this.products = this.productService.getProducts();
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { ProductsProps } from '../../data/products';
+import { IProduct } from '../../data/products';
 
 @Component({
   selector: 'app-cart-item',
@@ -8,7 +8,7 @@ import { ProductsProps } from '../../data/products';
   styleUrl: './cart-item.component.scss'
 })
 export class CartItemComponent implements OnInit {
-  public cartItems: Array<ProductsProps> = [];
+  public cartItems: Array<IProduct> = [];
   constructor(private cartService: CartService){}
   ngOnInit(): void {
     this.cartItems = this.cartService.getCart();
@@ -18,11 +18,11 @@ export class CartItemComponent implements OnInit {
     this.cartService.clearCartItem(index);
   };
 
-  handleIncreaseClick (cartItem: ProductsProps) {
+  handleIncreaseClick (cartItem: IProduct) {
     this.cartService.addCart(cartItem)
   };
 
-  handleDecreaseClick (cartItem: ProductsProps, index: number){
+  handleDecreaseClick (cartItem: IProduct, index: number){
     this.cartService.removeCartItems(cartItem, index);
   };
 

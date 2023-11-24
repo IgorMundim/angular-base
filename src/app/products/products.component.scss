@@ -5,10 +5,14 @@
   justify-items: start;
   padding: 40px 0 40px 40px;
   grid-row-gap: 20px;
+    @media (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 824px) {
+      display: flex;
+      flex-direction: column;
+    }
 
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
   }
 }

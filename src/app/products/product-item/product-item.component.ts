@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProductsProps } from '../../data/products';
+import { IProduct } from '../../data/products';
 import { CartService } from '../../services/cart.service';
 import { CartComponent } from '../../cart/cart.component';
 
@@ -11,7 +11,7 @@ import { CartComponent } from '../../cart/cart.component';
 })
 export class ProductItemComponent {
   constructor(private cartService: CartService){}
-  @Input('item') public product: ProductsProps = {
+  @Input('item') public product: IProduct = {
     id: '',
     name: '',
     price: 0,

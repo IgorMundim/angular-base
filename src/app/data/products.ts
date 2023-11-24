@@ -1,4 +1,4 @@
-export interface ProductsProps {
+export interface IProduct {
   id: string;
   name: string;
   price: number;
@@ -70,6 +70,6 @@ const products = [
       'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
       quantity: 1
   },
-] as ProductsProps[];
+] as IProduct[];
 
 export default products;
