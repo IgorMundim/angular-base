@@ -10,6 +10,7 @@ import { ProductItemComponent } from './products/product-item/product-item.compo
 
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component'
+import { CartService } from './services/cart.service';
 
 
 @NgModule({
@@ -23,9 +24,8 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

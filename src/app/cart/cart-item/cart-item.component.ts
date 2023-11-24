@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+import { ProductsProps } from '../../data/products';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.scss'
 })
-export class CartItemComponent {
-  
+export class CartItemComponent implements OnInit {
+  public cartItems: Array<ProductsProps> = [];
+  constructor(private cartService: CartService){}
+  ngOnInit(): void {
+    this.cartItems = this.cartService.getCart();
+  }
+
+  handleRemoveClick (index: number) {
+    this.cartService.clearCartItem(index);
+  };
+
+  handleIncreaseClick (cartItem: ProductsProps) {
+    this.cartService.addCart(cartItem)
+  };
+
+  handleDecreaseClick (cartItem: ProductsProps, index: number){
+    this.cartService.removeCartItems(cartItem, index);
+  };
+
 }

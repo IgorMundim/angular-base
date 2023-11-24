@@ -1,8 +1,8 @@
 
 <div class="container">
-  <div class="image">
-    <!-- <div class="button" onClick={handleProductClick} startIcon={<BsCartPlus />}> -->
-    <div class="customButton">
+  <div class="image"  [ngStyle]="{'background-image': 'url('+product.imageUrl+')'}">
+  
+    <div class="customButton" (click)="handleProductClick()">
       <button class="customButtonContainer">
         <div class="icon">
           <img src="assets/icons/shoppingCart.svg" alt=" Adicionar ao carrinho">
@@ -13,8 +13,10 @@
 
   </div>
   <div class="info">
-    <p>Name</p>
-    <p>R$ 10</p>
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
   </div>
 
 </div>
+
+
