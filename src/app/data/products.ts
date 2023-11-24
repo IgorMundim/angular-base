@@ -5,6 +5,7 @@ export interface IProduct {
   imageUrl: string;
   quantity: number;
 }
+
 const products = [
   {
     id: '6228fe63b7e6cb904bbe0165',

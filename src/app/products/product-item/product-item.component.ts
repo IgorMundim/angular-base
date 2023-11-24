@@ -11,6 +11,7 @@ import { CartComponent } from '../../cart/cart.component';
 })
 export class ProductItemComponent {
   constructor(private cartService: CartService){}
+  
   @Input('item') public product: IProduct = {
     id: '',
     name: '',

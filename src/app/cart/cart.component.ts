@@ -18,6 +18,4 @@ export class CartComponent {
   handleEscapeAreaClick(){
     this.closeCart.emit(true);
   }
-
-
 }

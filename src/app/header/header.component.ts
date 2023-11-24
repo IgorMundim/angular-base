@@ -9,7 +9,9 @@ import { CartService } from '../services/cart.service';
 export class HeaderComponent implements OnInit{
   public cartIsOpen: boolean = false;
   public cartDetails = { total: 0, countItems: 0 };
+  
   constructor(private cartService: CartService){}
+
   ngOnInit(): void {
     this.cartDetails = this.cartService.getDetails();
   }

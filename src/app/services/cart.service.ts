@@ -19,7 +19,6 @@ export class CartService {
     return this.cartDetails;
   }
 
-
   public addCart(productsToAdd: IProduct){
     const existingCartItems = this.cartItems.find((cartItem) => cartItem.id === productsToAdd.id);
     if (existingCartItems) {
