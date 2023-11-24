@@ -9,6 +9,7 @@ import { IProduct } from '../data/products';
 })
 export class ProductsComponent  implements OnInit{
   public products: Array<IProduct> = [];
+  
   constructor(private productService: ProductService){}
 
   ngOnInit(): void {
