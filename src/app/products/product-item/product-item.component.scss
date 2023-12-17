@@ -3,14 +3,9 @@
   .container{
     display: flex;
     flex-direction: column;
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
   }
 
   .image {
-    background-image: url("https://thaisslaski.com.br/wp-content/uploads/2019/04/Monumento-Imigra%C3%A7%C3%A3o-Japonesa.jpg");
     height: 380px;
     width: 300px;
     background-size: cover;
@@ -40,10 +35,6 @@
         visibility: visible;
         opacity: 1;
       }
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
     }
    }
    .customButtonContainer {
@@ -77,6 +68,7 @@
    }
 
   .info{
+    width: 300px;
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
